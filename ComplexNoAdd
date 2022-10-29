@@ -1,34 +1,35 @@
 #include<iostream>
 #include<conio.h>
+#include<math.h>
 using namespace std;
-class complex
+class Complex
 {
 	private:
 		int r,m;
 		public:
-			void get()
+			void getdata()
 			{
 				cout<<"Enter real and imaginary part of complex number : ";
 				cin>>r>>m;
 			}
-			void disp()
+			void display()
 			{
 				cout<<r<<"+"<<m<<"i";
 			}
-			complex operator + (complex o)
+			Complex operator + (Complex c1)
 			{
-				complex s;
-				s.r=r+o.r;
-				s.m=m+o.m;
+				Complex s;
+				s.r=r+c1.r;
+				s.m=m+c1.m;
 				return s;
 			}
 };
 int main()
 {
-	complex p,q,z;
-	p.get();
-	q.get();
+	Complex p,q,z;
+	p.getdata();
+	q.getdata();
 	z=p+q;
-	z.disp();
+	z.display();
 	return 0;
 }
